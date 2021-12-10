@@ -58,3 +58,20 @@ h4{
     align-content: center;
     border: solid 1px black;
 }
+.input2{
+    outline:0;
+    width:90%;
+    margin-top:10px;
+    float: left;
+    border-radius: 5px;height: 40px;
+    padding-left: 10px;
+}
+.btnSearch{
+    width:9%;
+    margin-top:10px;
+    float: right;
+    height: 40px;
+    padding-left: 10px; 
+    border-radius: 5px; 
+    background-image: linear-gradient(to bottom right, #f5f7fa, #d7e1ec);
+}

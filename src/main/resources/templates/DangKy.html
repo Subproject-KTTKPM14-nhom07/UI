@@ -7,27 +7,32 @@
     <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <form class="form-signin" method="POST" th:action="@{/register}" th:object="${user}">
-        <h2 class="form-heading" style="text-align: center">Đăng ký</h2>
-        <br>
+    <div style="align-items: center;text-align: center;padding-top: 25px;">
+        <div class="container" style="width:400px;background-color: rgb(248, 248, 248);padding: 10px;border-radius: 10px;  box-shadow: 5px 10px 8px #888888;">
+            <form class="form-signin" method="POST" th:action="@{/register}" th:object="${user}">
+                <h2 class="form-heading" style="text-align: center">Đăng ký</h2>
+                <br>
 
-        <div class="form-group">
-            <input name="name" type="text" class="form-control" placeholder="Tên"
-                   autofocus="true"/>
-            <input name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
-            <input name="yearOfBirth" type="text" class="form-control" placeholder="Năm sinh"/>
+                <div class="form-group">
+                    <input name="name" type="text" class="form-control" placeholder="Tên"
+                        autofocus="true"/>
+                    <input name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
+                    <input name="yearOfBirth" type="text" class="form-control" placeholder="Năm sinh"/>
 
-            <input name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
-
-
+                    <input name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
 
 
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng ký</button>
 
-            <br>
-            <h6 class="text-center" style="float:right;"><a href="/login">Đăng nhập</a></h6>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-image: linear-gradient(to bottom right, #2876f9, #6d17cb)">Đăng ký</button>
+
+                    <br>
+                    <h6 class="text-center" style="align-items: center;"><a href="/login">Đăng nhập</a></h6>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+
 </body>
 </html>

@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -30,11 +32,12 @@ public class DaoPost {
 	}
 
 	public List<VO> getAllPosts() {
-		ResponseEntity<List<VO>> list = restTemplate.exchange("http://18.142.162.108:9191/post/", HttpMethod.GET, null,
-				new ParameterizedTypeReference<List<VO>>() {
+		ResponseEntity<ArrayList<VO>> list = restTemplate.exchange("http://18.142.162.108:9191/post/", HttpMethod.GET, null,
+				new ParameterizedTypeReference<ArrayList<VO>>() {
 
 				});
-		List<VO> list1 = list.getBody();
+		ArrayList<VO> list1 = list.getBody();
+		Collections.reverse(list1);
 		return list1;
 	}
 
@@ -44,11 +47,12 @@ public class DaoPost {
 	}
 
 	public List<VO> getPostByUserId(Long userId) {
-		ResponseEntity<List<VO>> list = restTemplate.exchange("http://18.142.162.108:9191/post/user/" + userId,
-				HttpMethod.GET, null, new ParameterizedTypeReference<List<VO>>() {
+		ResponseEntity<ArrayList<VO>> list = restTemplate.exchange("http://18.142.162.108:9191/post/user/" + userId,
+				HttpMethod.GET, null, new ParameterizedTypeReference<ArrayList<VO>>() {
 
 				});
-		List<VO> list1 = list.getBody();
+		ArrayList<VO> list1 = list.getBody();
+		Collections.reverse(list1);
 		return list1;
 	}
 //    public List<ResponseTemplateVO> getPostByUserId(Long userId);
