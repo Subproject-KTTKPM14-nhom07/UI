@@ -11,11 +11,11 @@
 	<groupId>com.example</groupId>
 	<artifactId>ui</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UI</name>
 	<packaging>jar</packaging>
+	<name>UI</name>
 	<description>UI project for Spring Boot Redis</description>
 	<properties>
-		<java.version>11</java.version>
+<!--		<java.version>11</java.version>-->
 	</properties>
 	<dependencies>
 		<dependency>
