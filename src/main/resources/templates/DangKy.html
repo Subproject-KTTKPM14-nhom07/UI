@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <form class="form-signin" method="POST" th:action="@{/register}" th:object="${user}">
+        <h2 class="form-heading" style="text-align: center">Đăng ký</h2>
+        <br>
+
+        <div class="form-group">
+            <input name="name" type="text" class="form-control" placeholder="Tên"
+                   autofocus="true"/>
+            <input name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
+            <input name="yearOfBirth" type="text" class="form-control" placeholder="Năm sinh"/>
+
+            <input name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
+
+
+
+
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng ký</button>
+
+            <br>
+            <h6 class="text-center" style="float:right;"><a href="/login">Đăng nhập</a></h6>
+        </div>
+    </form>
+</body>
+</html>

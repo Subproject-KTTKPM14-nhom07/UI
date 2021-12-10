@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+    <h5 style="float: left" class="text-center" ><a th:href="@{/user/profile(userId=${userId})}">Xem thông tin cá nhân</a></h5>
+    <br>
+
+    <form class="form-signin" method="POST" th:action="@{/home/summit}" th:object="${post}">
+
+
+        <div class="form-group">
+
+            <input name="content" type="text" class="form-control" placeholder="Ghi nội dung ở đây nè!!"
+                   autofocus="true"/>
+
+            <input name="userId" type="hidden" th:value="${userId}" />
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng</button>
+        </div>
+    </form>
+
+    <div class="post" th:each="vo : ${listAllPosts}" style="width: 70%; margin: auto;">
+        <div style="box-shadow: 5px 5px 5px #999999; margin-bottom: 10px; padding: 10px 20px 10px 20px; border-radius: 10px; background: beige">
+            <h4 th:text="${vo.user.name}"></h4>
+            <h6 th:text="${vo.post.dayPost}"></h6>
+            <div style="border: solid 1px black; width: 60%; margin: auto;padding: 10px 20px 10px 20px;border-radius: 10px">
+                <p th:text="${vo.post.content}"></p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

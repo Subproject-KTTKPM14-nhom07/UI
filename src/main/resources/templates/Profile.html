@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Trang cá nhân</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+    <img src="https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-vector-daisy-icon-png-image_871996.jpg" style="height: 200px;width: 200px; float: left;border-radius: 50%; margin-left: 100px; border: solid 1px #999999; box-shadow: 5px "></img>
+    <div style="padding: 50px 50px 50px 50px; margin-left: 100px ">
+        <h4 th:text="${user.name}" style="margin-left: 150px"></h4>
+
+        <h6 th:text="${user.phone}" style="margin-left: 150px"></h6>
+    </div>
+
+    <br>
+    <br>
+
+    <div th:each="vo : ${list}" style="width: 70%; margin: auto;">
+        <div style="box-shadow: 5px 5px 5px #999999; margin-bottom: 10px; padding: 10px 20px 10px 20px; border-radius: 10px; background: beige">
+            <h4 th:text="${vo.user.name}"></h4>
+            <h6 th:text="${vo.post.dayPost}"></h6>
+            <div style="border: solid 1px black; width: 60%; margin: auto;padding: 10px 20px 10px 20px;border-radius: 10px">
+                <p th:text="${vo.post.content}"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <h6 class="text-center" style="float:left;"><a href="/home/">Quay lại</a></h6>
+
+</body>
+</html>
