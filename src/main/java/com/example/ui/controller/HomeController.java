@@ -44,7 +44,12 @@ public class HomeController {
         }
 //        log.info(token);
         if(token != ""){
-            user = daoUser.checkUserJWT(token);
+            try {
+                user = daoUser.checkUserJWT(token);
+            }catch (Exception e){
+                return "redirect:/login";
+            }
+
         }
         if(user == null){
             return "redirect:/login";

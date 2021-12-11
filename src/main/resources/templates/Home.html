@@ -8,8 +8,8 @@
 </head>
 <body> 
     <div style="width: 60%;align-items: center;align-self: center;align-content: center;" class="container">
-        <h6 style="float: left" class="text-center" ><a th:href="@{/user/profile(userId=${userId})}">◄ Xem thông tin cá nhân</a> </h6><br>
-        <div>
+        <h6 style="float: left;width: 100%;text-align: left;" class="text-center" ><a th:href="@{/user/profile(userId=${userId})}">◄ Xem thông tin cá nhân</a> </h6><br>
+        <div style="width: 100%;float: left;">
             <form style="width: 100%;" method="POST" th:action="@{/home/summit}" th:object="${post}">
             
                 <input name="userId"type="hidden" th:value="${userId}" />
@@ -28,7 +28,7 @@
                         height: 40px;
                         padding-left: 10px; 
                         border-radius: 5px; 
-                        background-image: linear-gradient(to bottom right, #f5f7fa, #d7e1ec);" type="submit">Đăng</button>
+                        background-image: linear-gradient(to bottom right, #09c6f9, #045de9);" type="submit">Đăng</button>
                 
             
 
@@ -36,13 +36,15 @@
             </form>
                 
         </div>
-        <div style="float: left;"></div>
         <br>
+        <br>
+        <br>
+        <div style="float: left;"></div>
         <div th:each="vo : ${listAllPosts}" style="margin: auto;">
-            <div style="box-shadow: 5px 5px 5px #999999; margin-bottom: 10px; padding: 10px 20px 10px 20px; border-radius: 10px; background: rgb(255, 255, 255)">
+            <div style="box-shadow: 3px 3px 3px rgb(175, 210, 255); margin-bottom: 10px; padding: 10px 20px 20px 20px; border-radius: 10px; background: rgb(255, 255, 255)">
                 <h4 th:text="${vo.user.name}"></h4>
                 <h6 th:text="${vo.post.dayPost}"></h6>
-                <div style="border: solid 1px black; width: 80%;min-height: 150px; margin: auto;padding: 10px 20px 10px 20px;border-radius: 10px">
+                <div style="border: solid 1px rgb(67, 148, 255); width: 80%;min-height: 150px; margin: auto;padding: 10px 20px 10px 20px;border-radius: 10px">
                     <p th:text="${vo.post.content}"></p>
                 </div>
             </div>
